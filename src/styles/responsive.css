@@ -1,0 +1,25 @@
+@media (max-width:480px) {
+    .movie {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    .movie .movie-information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .movie .movie-image {
+        width: 9rem;
+        height: 9rem;
+        margin: 1rem;
+    }
+
+    .movie-description {
+        text-align: center;
+    }
+}
