@@ -1,4 +1,4 @@
-import { apiKey } from "../src/key.js";
+//import { apiKey } from "../src/key.js";
 
 const moviesContainer = document.querySelector('.movies');
 const input = document.getElementById('movie-name');
@@ -8,7 +8,7 @@ const showFavorites = document.getElementById('onlyFavorites');
 // Consome a api e retorna os filmes populares
 async function getPopularMovies() {
     try {
-        const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
+        const url = `https://api.themoviedb.org/3/movie/popular?api_key=05601d6ecb084cbde56bc89508eb40e7&language=pt-BR&page=1`;
         const fetchResponse = await fetch(url);
         const { results } = await fetchResponse.json();
 
@@ -37,7 +37,7 @@ searchButton.addEventListener('click', searchMovie);
 // Função que busca o filme na api
 function searchMovie() {
     const title = input.value;
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=pt-BR&query=${title}&page=1`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=05601d6ecb084cbde56bc89508eb40e7&language=pt-BR&query=${title}&page=1`;
     fetch(url)
         .then(response => response.json())
         .then(data => {
