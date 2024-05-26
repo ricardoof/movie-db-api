@@ -1,26 +1,9 @@
-import { apiKey } from "./config.js";
+import apiKey from "./config.js";
 
 const moviesContainer = document.querySelector('.movies');
 const input = document.getElementById('movie-name');
 const searchButton = document.querySelector('.searchIcon');
 const showFavorites = document.getElementById('onlyFavorites');
-
-fetch('/apiKey')
-    .then(response => response.json())
-    .then(data => {
-        const apiKey = data.apiKey;
-        const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Manipular os dados da API
-                console.log(data);
-            })
-            .catch(error => console.error('Erro:', error));
-    })
-    .catch(error => console.error('Erro ao buscar a API Key:', error));
-
 
 // Consome a api e retorna os filmes populares
 async function getPopularMovies() {
