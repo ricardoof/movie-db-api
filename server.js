@@ -15,9 +15,10 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Configurar tipos MIME para arquivos CSS
+app.use('/src/styles', express.static(path.join(__dirname, 'src/styles')));
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
-
-
